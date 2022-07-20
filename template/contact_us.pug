@@ -1,0 +1,20 @@
+doctype html
+html
+   head
+      title Contact Us
+      link(rel='stylesheet', href='/style.css', type='text/css')
+   body
+      include ./navbar.pug
+      div#contact.container
+         form(action='' method='POST' enctype='text/plain')
+            h3 Get in Touch
+            label(for='fname') Name
+            input#fname(type='text' name='firstname' placeholder='Enter your name ...')
+            label(for='lname') Email Address
+            input#email(type='email' name='email' placeholder='Enter your email address ...')
+            label(for='country') Subject
+            input#subject(type='text' name='subject' placeholder='Type the subject ...')
+            label(for='subject') Subject
+            textarea#subject(name='subject' placeholder='Write something..' style='height: 200px')
+            input(type='submit' value='Submit')
+      include ./footer.pug

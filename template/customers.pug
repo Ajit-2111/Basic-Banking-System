@@ -1,0 +1,30 @@
+html
+   head
+      title Customers
+      link(rel='stylesheet', href='/style.css', type='text/css')
+      script(src='/main.js')
+   body
+      include ./navbar.pug
+      div.main
+         h3 All Customers
+         table.styled-table
+            thead
+               tr
+                  th Sr. No
+                  th First Name
+                  th Last Name
+                  th Transfer
+            tbody
+               each customer in customer_data
+                  if customer.first_name == appuser
+                     p(id= 'usermny' style='display:none') #{appusermny = customer.money}
+                  tr
+                     td= customer.id
+                     td= customer.first_name
+                     td= customer.last_name
+                     td
+                        if customer.first_name == appuser
+                           button(class='transferbutton' disabled) Transfer
+                        else
+                           button(class='transferbutton' onclick='redirecturl("/transfer/'+customer.id+'/'+customer.first_name+'/'+customer.last_name+'")') Transfer 
+      include ./footer.pug

@@ -1,0 +1,22 @@
+doctype html
+html
+   head
+      title Transfer
+      link(rel='stylesheet', href='/style.css', type='text/css')
+   body
+      include ./navbar.pug
+      div.container
+         form(action = "/transfer", method = "POST")
+            h3 Transfer Money
+            label(for='unqid') Unique ID
+            input#fname(type='text' name='unqid' value= unqid readonly="true")
+            label(for='fname') First Name
+            input#fname(type='text' name='fname' value= firstName readonly="true")
+            label(for='lname') Last Name
+            input#text(type='text' name='lname' value=lastName readonly="true")
+            label(for='amount') Amount
+            input#amount(type='number' name='amount' max= mnyLimit required min=0)
+            label(for='password') Password
+            input#password(type='password' name='password' minlength='8' required)
+            input(type='submit' value='Submit')
+      include ./footer.pug

@@ -1,0 +1,17 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet', href='/style.css', type='text/css')
+  title Thank You
+section.login-main-wrapper
+  div.main-container
+    div.login-process
+      div.login-main-container
+        div.thankyou-wrapper
+          h1
+            img(src='/images-thankyou.png' alt='thanks')
+          p Thank you #{user} for using our services.
+          p You have transfered #{amount} Rs to #{recieverName} #{recieverSurname}
+          a(href='/') Back to home
